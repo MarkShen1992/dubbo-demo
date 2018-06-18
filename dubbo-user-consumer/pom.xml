@@ -20,7 +20,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.dubbo.demo</groupId>
+			<groupId>com.mark.demo</groupId>
 			<artifactId>dubbo-user-api</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
