@@ -32,12 +32,12 @@ public class UserServiceImpl implements UserService {
 	}
 
 	@Override
-	public Integer delete(Long userId) {
+	public Integer delete(Integer userId) {
 		return userDao.delete(userId);
 	}
 
 	@Override
-	public UserVo getUserVoByUserId(Long userId) {
+	public UserVo getUserVoByUserId(Integer userId) {
 		return entity2vo(userDao.getUserEntityByUserId(userId));
 	}
 	

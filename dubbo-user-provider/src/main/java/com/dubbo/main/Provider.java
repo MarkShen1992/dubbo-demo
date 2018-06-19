@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Provider {
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
-                new String[] {"spring/provider.xml"});
+                new String[] {"spring/provider.xml", "spring/spring-dao.xml"});
         context.start();
         // press any key to exit
         System.in.read();

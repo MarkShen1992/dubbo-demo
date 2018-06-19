@@ -15,7 +15,7 @@ public class UserEntity implements Serializable {
 	/**
 	 * userId
 	 */
-	private Long userId;
+	private Integer userId;
 	
 	/**
 	 * 用户名字
@@ -33,6 +33,20 @@ public class UserEntity implements Serializable {
 	private Integer isDeleted;
 	
 	/**
+	 * @return the userId
+	 */
+	public Integer getUserId() {
+		return userId;
+	}
+
+	/**
+	 * @param userId the userId to set
+	 */
+	public void setUserId(Integer userId) {
+		this.userId = userId;
+	}
+
+	/**
 	 * @return the isDeleted
 	 */
 	public Integer getIsDeleted() {
@@ -44,20 +58,6 @@ public class UserEntity implements Serializable {
 	 */
 	public void setIsDeleted(Integer isDeleted) {
 		this.isDeleted = isDeleted;
-	}
-
-	/**
-	 * @return the userId
-	 */
-	public Long getUserId() {
-		return userId;
-	}
-
-	/**
-	 * @param userId the userId to set
-	 */
-	public void setUserId(Long userId) {
-		this.userId = userId;
 	}
 
 	/**

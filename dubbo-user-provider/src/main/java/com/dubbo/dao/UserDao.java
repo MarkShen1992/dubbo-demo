@@ -30,12 +30,12 @@ public interface UserDao {
 	 * @param userId
 	 * @return
 	 */
-	Integer delete(@Param("userId") Long userId);
+	Integer delete(@Param("userId") Integer userId);
 
 	/**
 	 * 根据用户id查找用户对象
 	 * @param userId
 	 * @return
 	 */
-	UserEntity getUserEntityByUserId(@Param("userId") Long userId);
+	UserEntity getUserEntityByUserId(@Param("userId") Integer userId);
 }

@@ -14,7 +14,7 @@ public interface UserService {
 	
 	Integer update(UserVo UserVo);
 	
-	Integer delete(Long userId);
+	Integer delete(Integer userId);
 	
-	UserVo getUserVoByUserId(Long userId);
+	UserVo getUserVoByUserId(Integer userId);
 }

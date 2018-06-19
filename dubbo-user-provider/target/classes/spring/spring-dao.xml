@@ -16,7 +16,7 @@
 					    http://www.springframework.org/schema/data/jpa/spring-jpa.xsd">
 
 
-	<context:component-scan base-package="com.mengdee.manager.dao.**.impl" />
+	<context:component-scan base-package="com.dubbo" />
 	
 	<!-- 读取.properties文件 -->
 	<context:property-placeholder location="classpath:spring/db.properties" />
@@ -42,28 +42,22 @@
 
 		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
 		<property name="timeBetweenEvictionRunsMillis" value="${druid.timeBetweenEvictionRunsMillis}" />
-
 		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
 		<property name="minEvictableIdleTimeMillis" value="${druid.minEvictableIdleTimeMillis}" />
 		<property name="validationQuery" value="${druid.validationQuery}" />
 		<property name="testWhileIdle" value="${druid.testWhileIdle}" />
 		<property name="testOnBorrow" value="${druid.testOnBorrow}" />
 		<property name="testOnReturn" value="${druid.testOnReturn}" />
-
 		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 如果用Oracle，则把poolPreparedStatements配置为true，mysql可以配置为false。 -->
-		<property name="poolPreparedStatements"
-			value="${druid.poolPreparedStatements}" />
-		<property name="maxPoolPreparedStatementPerConnectionSize"
-			value="${druid.maxPoolPreparedStatementPerConnectionSize}" />
-
+		<property name="poolPreparedStatements" value="${druid.poolPreparedStatements}" />
+		<property name="maxPoolPreparedStatementPerConnectionSize" value="${druid.maxPoolPreparedStatementPerConnectionSize}" />
 		<!-- 配置监控统计拦截的filters -->
 		<property name="filters" value="${druid.filters}" />
 	</bean>
 
-
 	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="configLocation" value="classpath:/mapper/mybatis-config.xml" />
+		<property name="configLocation" value="classpath:/spring/mybatis-config.xml" />
 		<property name="mapperLocations" value="classpath:/mapper/*Mapper.xml" />
 		<property name="typeAliasesPackage" value="com.mengdee.manager.domain" />
 
@@ -71,17 +65,14 @@
 
 	<!-- 配置mybatis mapper接口 -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
-		<property name="basePackage"
-			value="com.mengdee.manager.dao.**.mapper" />
-		<property name="sqlSessionFactoryBeanName"
-			value="sqlSessionFactory" />
+		<property name="basePackage" value="com.dubbo.dao" />
+		<property name="sqlSessionFactoryBeanName" value="sqlSessionFactory" />
 	</bean>
 
 	<!-- 事务配置 -->
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean>
-
 	<!-- 使用annotation注解方式配置事务 -->
 	<tx:annotation-driven transaction-manager="transactionManager" />
 

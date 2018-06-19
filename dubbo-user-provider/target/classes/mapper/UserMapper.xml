@@ -16,7 +16,7 @@
 			sys_user
 	</sql>
 	
-	<select id="getUserEntityByUserId" parameterType="Integer" resultMap="StudentResult">
+	<select id="getUserEntityByUserId" parameterType="Integer" resultMap="UserEntityResult">
 		<include refid="querySQL" />
 		WHERE id = #{userId}
 	</select>
@@ -43,7 +43,7 @@
 		SET
 			u.isDeleted = 1
 		WHERE
-			u.id = {userId}
+			u.id = #{userId}
 	</delete>
 	
 </mapper>  
