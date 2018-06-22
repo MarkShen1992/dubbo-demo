@@ -55,3 +55,5 @@
     - 第一， 将`Dubbo`做成WEB工程，在`web.xml`文件中，启动spring
     - 第二， 自建main方法来运行，这种方式适合本地调试(**本例中使用**)
     - 第三， 使用dubbo框架提供的main方法来运行(**推荐使用**)
+    
+5. [网站架构发展](https://mp.weixin.qq.com/s/-P9czn_8Ssx30M_S8A71Ug)
