@@ -19,22 +19,18 @@ public class UserServiceImpl implements UserService {
 		return "Hello " + name;
 	}
 
-	@Override
 	public Integer insert(UserVo userVo) {
 		return userDao.insert(BeanConvertUtils.vo2entity(userVo));
 	}
 
-	@Override
 	public Integer update(UserVo userVo) {
 		return userDao.update(BeanConvertUtils.vo2entity(userVo));
 	}
 
-	@Override
 	public Integer delete(Integer userId) {
 		return userDao.delete(userId);
 	}
 
-	@Override
 	public UserVo getUserVoByUserId(Integer userId) {
 		return BeanConvertUtils.entity2vo(userDao.getUserEntityByUserId(userId));
 	}

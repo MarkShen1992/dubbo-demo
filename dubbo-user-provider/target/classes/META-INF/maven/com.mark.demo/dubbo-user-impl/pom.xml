@@ -7,6 +7,7 @@
 		<groupId>com.mark.demo</groupId>
 		<artifactId>dubbo-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
+		<relativePath>../dubbo-parent</relativePath>
 	</parent>
 
 	<artifactId>dubbo-user-impl</artifactId>
@@ -83,17 +84,86 @@
 	</dependencies>
 
 	<build>
+		<resources>
+            <resource>
+                <targetPath>${project.build.directory}/classes</targetPath>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <!-- 结合com.alibaba.dubbo.container.Main -->
+            <resource>
+                <targetPath>${project.build.directory}/classes/META-INF/spring</targetPath>
+                <directory>src/main/resources/spring</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>*.xml</include>
+                    <include>*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+
 		<plugins>
-			<!-- 需要通过做 update maven project来更新JDK版本 -->
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<version>3.1</version>
-				<configuration>
-					<source>1.8</source>
-					<target>1.8</target>
-				</configuration>
-			</plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+            </plugin>
+		    <!-- 内置打包法 -->
+		    <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <!-- 用这个maven打包插件 -->
+		        <artifactId>maven-shade-plugin</artifactId>
+		        <version>3.1.1</version>
+		        <executions>
+		            <execution>
+		                <phase>package</phase>
+		                <goals>
+		                    <goal>shade</goal>
+		                </goals>
+		                <configuration>
+		                    <!-- 默认值为true.注意这个属性,如果你用这个插件来deploy,或者发布到中央仓库，这个属性会缩减你的pom文件,会把你依赖的<dependency>干掉 -->
+		                    <createDependencyReducedPom>false</createDependencyReducedPom>
+		                    <transformers>
+		                        <transformer  
+                                	implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+	                                <resource>META-INF/spring.handlers</resource>  
+	                            </transformer>  
+	                            <transformer  
+	                                implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">  
+	                                <resource>META-INF/spring.schemas</resource>  
+	                            </transformer>
+		                        <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+		                            <!-- 这个是你的程序入口文件 -->
+		                            <mainClass>com.alibaba.dubbo.container.Main</mainClass>
+		                        </transformer>
+		                    </transformers>
+		                </configuration>
+		            </execution>
+		        </executions>
+		    </plugin>
+		    <plugin>
+		        <groupId>org.apache.maven.plugins</groupId>
+		        <artifactId>maven-resources-plugin</artifactId>
+		        <version>3.1.0</version>
+		        <configuration>
+		            <encoding>UTF-8</encoding>
+		        </configuration>
+		    </plugin>
 		</plugins>
 	</build>
 </project>
