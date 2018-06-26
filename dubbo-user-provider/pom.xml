@@ -7,12 +7,12 @@
 		<groupId>com.mark.demo</groupId>
 		<artifactId>dubbo-parent</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../dubbo-parent</relativePath>
+		<relativePath>../dubbo-parent/pom.xml</relativePath>
 	</parent>
 
-	<artifactId>dubbo-user-impl</artifactId>
+	<artifactId>dubbo-user-provider</artifactId>
 	<packaging>jar</packaging>
-	<name>dubbo-user-impl</name>
+	<name>dubbo-user-provider</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -24,8 +24,8 @@
 /dubbo-user-consumer/.project
 
 
-#dubbo-user-consumer
-/dubbo-user-consumer/.settings/
-/dubbo-user-consumer/target/
-/dubbo-user-consumer/.classpath
-/dubbo-user-consumer/.project
+#dubbo-user-provider
+/dubbo-user-provider/.settings/
+/dubbo-user-provider/target/
+/dubbo-user-provider/.classpath
+/dubbo-user-provider/.project
