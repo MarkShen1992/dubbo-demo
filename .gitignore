@@ -1,6 +1,31 @@
-/target/
-/.settings/
+#dubbo-common
+/dubbo-common/.settings/
+/dubbo-common/target/
+/dubbo-common/.classpath
+/dubbo-common/.project
 
 
-.classpath
-.project
+#dubbo-parent
+/dubbo-parent/.settings/
+/dubbo-parent/.project
+
+
+#dubbo-user-api
+/dubbo-user-api/.settings/
+/dubbo-user-api/target/
+/dubbo-user-api/.classpath
+/dubbo-user-api/.project
+
+
+#dubbo-user-consumer
+/dubbo-user-consumer/.settings/
+/dubbo-user-consumer/target/
+/dubbo-user-consumer/.classpath
+/dubbo-user-consumer/.project
+
+
+#dubbo-user-consumer
+/dubbo-user-consumer/.settings/
+/dubbo-user-consumer/target/
+/dubbo-user-consumer/.classpath
+/dubbo-user-consumer/.project
