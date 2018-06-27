@@ -57,3 +57,5 @@
     - 第三， 使用dubbo框架提供的main方法来运行(**推荐使用**)
     
 5. [网站架构发展](https://mp.weixin.qq.com/s/-P9czn_8Ssx30M_S8A71Ug)
+
+6. 经常阅读自己写过的代码，**refactoring**
