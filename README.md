@@ -59,3 +59,17 @@
 5. [网站架构发展](https://mp.weixin.qq.com/s/-P9czn_8Ssx30M_S8A71Ug)
 
 6. 经常阅读自己写过的代码，**refactoring**
+
+7. 寒泉子分享
+    
+    - [SOFA框架](https://github.com/alipay/sofa-boot)
+    - 类加载死锁， finalreference堆积，对外内存（不要-Xmx控制的内存），YGC(不断拉长)
+    - `jstack -m`,一般不推荐使用，但是在特殊的情况下可以使用。
+    - 数据结构，读Java源码(openJDK)
+    - `jmap -histo`
+    - `finalize`方法什么时候被调用
+    
+        - GC发生并找出Finalizer对象
+        - 判断Finalizer对象引用的对象是否没有别的引用了
+        - 将引用已死对象的Finalizer对象丢到一个Finilizer的ReferenceQueue里面
+        - 在GC结束之后，FinalizerThread线程被唤醒并从ReferenceQueue里取出来间接调用finalize方法
