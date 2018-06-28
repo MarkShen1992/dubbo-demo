@@ -60,7 +60,7 @@
 
 6. 经常阅读自己写过的代码，**refactoring**
 
-7. 寒泉子分享
+7. 你假笨分享
     
     - [SOFA框架](https://github.com/alipay/sofa-boot)
     - 类加载死锁， finalreference堆积，对外内存（不要-Xmx控制的内存），YGC(不断拉长)
@@ -73,3 +73,9 @@
         - 判断Finalizer对象引用的对象是否没有别的引用了
         - 将引用已死对象的Finalizer对象丢到一个Finilizer的ReferenceQueue里面
         - 在GC结束之后，FinalizerThread线程被唤醒并从ReferenceQueue里取出来间接调用finalize方法
+    
+    - `FinalReference`对象及引用对象什么时候被回收
+    
+        - 执行完finalize方法后会剥离Finalizer对象和被引用对象的关系
+        - 执行完了finilize方法的Finilizer对象及被引用的对象会在下个GC周期里被回收
+        - 如果finalize方法因为队列过长，不得不等待之前的对象执行完才执行，因为肯能存在跨多个GC周期
