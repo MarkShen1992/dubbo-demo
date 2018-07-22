@@ -79,3 +79,7 @@
         - 执行完finalize方法后会剥离Finalizer对象和被引用对象的关系
         - 执行完了finilize方法的Finilizer对象及被引用的对象会在下个GC周期里被回收
         - 如果finalize方法因为队列过长，不得不等待之前的对象执行完才执行，因为肯能存在跨多个GC周期
+
+  8. [微服务](https://martinfowler.com/articles/microservices.html)
+        - [微服务技术栈](http://www.infoq.com/cn/articles/micro-service-technology-stack)
+        - [放弃 Dubbo，选择 Spring Cloud 微服务架构实践与经验总结](http://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&mid=2650075866&idx=1&sn=e0a92ea2255ceb11be2f2516385ec99b&chksm=bedb29b489aca0a2e8a673d5f1c3be5adb3800972bd5a0632b372efcd5e93bd8f1192ba8366b&mpshare=1&scene=2&srcid=1116eyjFJIU9llK1u3GYwYH0&from=timeline#rd)
