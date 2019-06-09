@@ -81,5 +81,5 @@
         - 如果finalize方法因为队列过长，不得不等待之前的对象执行完才执行，因为肯能存在跨多个GC周期
 
   8. [微服务](https://martinfowler.com/articles/microservices.html)
-        - [微服务技术栈](http://www.infoq.com/cn/articles/micro-service-technology-stack)
+        - [微服务技术栈](https://mp.weixin.qq.com/s?__biz=MzI4NDY5Mjc1Mg==&mid=2247486219&idx=1&sn=79cf09cdd3cb40be4f3c80ba0bfd0ece&chksm=ebf6d374dc815a6274961f349f22afe4525572b7d3d599a44dabc63bfa06453c619da225185c&scene=27#wechat_redirect)
         - [放弃 Dubbo，选择 Spring Cloud 微服务架构实践与经验总结](http://mp.weixin.qq.com/s?__biz=MjM5NzM0MjcyMQ==&mid=2650075866&idx=1&sn=e0a92ea2255ceb11be2f2516385ec99b&chksm=bedb29b489aca0a2e8a673d5f1c3be5adb3800972bd5a0632b372efcd5e93bd8f1192ba8366b&mpshare=1&scene=2&srcid=1116eyjFJIU9llK1u3GYwYH0&from=timeline#rd)
